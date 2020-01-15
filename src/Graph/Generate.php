@@ -66,7 +66,7 @@
             
             $res = @imagecreatefromjpeg($file);
            
-            if(!$res){
+            if(is_resource($res) && $res!==FALSE){
                 $width = imagesx($res);
                 $height = imagesy($res);
 
