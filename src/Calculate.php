@@ -126,22 +126,24 @@
          */
         public function renderPatch($file, $patch){
             $im = imagecreatefromjpeg($file);
+            if(!$im){
+                $red = imagecolorallocatealpha($im, 255, 0, 0, 0); 
+                foreach ($patch as $key => $value){
+                        $value2 = substr($value, 0, -1);
+                        $value3 = substr($value2, 1); 
+                        $exp = explode(",",$value3);
+                        $pX = $exp[0];
+                        $pY = $exp[1];
 
-            $red = imagecolorallocatealpha($im, 255, 0, 0, 0); 
-            foreach ($patch as $key => $value){
-                    $value2 = substr($value, 0, -1);
-                    $value3 = substr($value2, 1); 
-                    $exp = explode(",",$value3);
-                    $pX = $exp[0];
-                    $pY = $exp[1];
+                        imagefill($im, $pX, $pY, $red);
 
-                    imagefill($im, $pX, $pY, $red);
+                }
 
+                imagejpeg($im);
+                imagedestroy($im);
+            }else{
+                $file = "err";
             }
-
-            imagejpeg($im);
-            imagedestroy($im);
-            
             return $file;
         }
         
