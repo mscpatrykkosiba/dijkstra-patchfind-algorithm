@@ -65,7 +65,8 @@
         public function loadFromFile($file){
             
             $res = @imagecreatefromjpeg($file);
-           
+            $relations = array();
+            
             if(!$res){
                 $width = imagesx($res);
                 $height = imagesy($res);
@@ -89,7 +90,6 @@
                 $modX = ceil($width/2);
                 $modY = ceil($height/2);
 
-                $relations = array();
                 for($y = 0; $y <= $height; $y++){
                     for($x = 0; $x <= $width; $x++){
 
@@ -115,7 +115,6 @@
                         if($this->checkParams($tmpX4, $tmpY4)) $relations["($tmpX4,$tmpY4)"]["($x,$y)"] = $k3;
                     }
                 }
-                $relations = $res;
             }
             
             return $relations;
