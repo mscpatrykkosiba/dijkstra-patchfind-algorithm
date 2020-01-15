@@ -34,8 +34,8 @@
         /**
          * initial starting position
          *
-         * @param  string $x
-         * @param  string $y
+         * @param  int  $x
+         * @param  int  $y
          * @return bool
          * @throws Exception\InvalidArgumentException
          */
@@ -53,8 +53,8 @@
         /**
          * initial ending position
          *
-         * @param  string $x
-         * @param  string $y
+         * @param  int  $x
+         * @param  int  $y
          * @return bool
          * @throws Exception\InvalidArgumentException
          */
