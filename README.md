@@ -64,7 +64,7 @@ Render preview image
     $image_url = $output->renderPatch(__DIR__.'/test.jpg', $patch);
     
 ```
-![blank graph preview](http://websolutions.com.pl/graph_blank.png)
+![blank graph preview](http://websolutions.com.pl/graph_blank.png) ![load graph preview](http://websolutions.com.pl/graph_load.png)
 
 ## Requirements
 
