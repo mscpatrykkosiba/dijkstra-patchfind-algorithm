@@ -51,8 +51,8 @@
         /**
          * render the shortest route preview
          *
-         * @param  array  $file
-         * @param  string $patch
+         * @param  string  $file
+         * @param  array   $patch
          * @return string
          */
         public function renderPatch($file, $patch);
