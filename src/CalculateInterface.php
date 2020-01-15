@@ -7,8 +7,8 @@
         /**
          * initial starting position
          *
-         * @param  string $x
-         * @param  string $y
+         * @param  int  $x
+         * @param  int  $y
          * @return bool
          */
         public function setStartXY($x, $y);
@@ -16,8 +16,8 @@
         /**
          * initial ending position
          *
-         * @param  string $x
-         * @param  string $y
+         * @param  int  $x
+         * @param  int  $y
          * @return bool
          */
         public function setEndXY($x, $y);
