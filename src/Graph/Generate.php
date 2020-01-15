@@ -65,8 +65,13 @@
         public function loadFromFile($file){
             
             $res = imagecreatefromjpeg($file);
-            $width = imagesx($res);
-            $height = imagesx($res);
+            if($res){
+                $width = imagesx($res);
+                $height = imagesy($res);
+            }else{
+                $width = 100;
+                $height = 100;
+            }
             
             $new_tab = array();
             for($y = 0; $y <= $height; $y++){
