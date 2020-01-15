@@ -21,36 +21,36 @@ The algorithm returns the route to be taken in the form of points (x, y) and all
 ```php
 <?php
 	
-    require __DIR__ .'/vendor/autoload.php';
+	require __DIR__ .'/vendor/autoload.php';
         
-    $output = new PatchFind\Calculate();
+	$output = new PatchFind\Calculate();
         
-    //set start and finish position
+        //set start and finish position
     
-    $output->setStartXY(0,0);
-    $output->setEndXY(100,100);
+        $output->setStartXY(0,0);
+        $output->setEndXY(100,100);
         
-    //calculate patch in blank graph
+        //calculate patch in blank graph
     
-    $graph = $output->makeGraph(100,100);
-    $patch = $output->getPatch($graph);
-    var_dump($patch);
-    /*
-     var_dump($patch) returns:
-     ex. (0,0),(0,1)(1,1),(1,2)
-     ..array
-     */    
+        $graph = $output->makeGraph(100,100);
+        $patch = $output->getPatch($graph);
+        var_dump($patch);
+        /*
+         var_dump($patch) returns:
+         ex. (0,0),(0,1)(1,1),(1,2)
+         ..array
+         */    
      
-    //calculate patch in obstacle graph
+        //calculate patch in obstacle graph
     
-    $graph = $output->loadGraph(__DIR__."/test.jpg");
-    $patch = $output->getPatch($graph);
-    var_dump($patch);
-    /*
-     var_dump($patch) returns:
-     ex. (0,0),(0,1)(1,1),(1,2)
-     ..array
-     */   
+        $graph = $output->loadGraph(__DIR__."/test.jpg");
+        $patch = $output->getPatch($graph);
+        var_dump($patch);
+        /*
+         var_dump($patch) returns:
+         ex. (0,0),(0,1)(1,1),(1,2)
+         ..array
+        */   
      
 ```
 
@@ -59,9 +59,9 @@ Render preview image
 ```php
 <?php
 
-    //render patch image
+        //render patch image
     
-    $image_url = $output->renderPatch(__DIR__.'/test.jpg', $patch);
+        $image_url = $output->renderPatch(__DIR__.'/test.jpg', $patch);
     
 ```
 ![blank graph preview](http://websolutions.com.pl/graph_blank.png) ![load graph preview](http://websolutions.com.pl/graph_load.png)
