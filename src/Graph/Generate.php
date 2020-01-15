@@ -77,6 +77,7 @@
                             $color = 10;
                         }else{
                             $color = imagecolorat($res, $x, $y);
+                            if(!$color) $color = 255;
                         }
                         $new_tab[$x][$y] = $color;
                     }
